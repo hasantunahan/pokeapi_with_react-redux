@@ -1,15 +1,15 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import ImageExtension from '../../../../core/extension/image';
-import {app_logo} from '../../../../core/app/constant/imageconstant';
+import { app_logo } from '../../../../core/app/constant/imageconstant';
 import splashStyle from '../style/style';
-import {navigate} from '../../../../navigation/navigation';
+import { navigate } from '../../../../navigation/navigation';
 
 const SplashView = props => {
   const styles = splashStyle();
   React.useEffect(() => {
     setTimeout(function () {
-      navigate(props, 'Home');
+      navigate(props, 'HomeNavigation');
     }, 2500);
   });
 
