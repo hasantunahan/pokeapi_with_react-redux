@@ -8,6 +8,9 @@ const style = props =>
       width: '100%',
       flexDirection: 'row',
       justifyContent: 'space-between',
+    },
+    scrool_flex :{
+      flex:1
     }
   });
 function pokeDetailsStyle() {

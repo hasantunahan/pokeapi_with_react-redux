@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, RefreshControl,View} from 'react-native';
+import { FlatList, RefreshControl, View, useColorScheme } from 'react-native';
 import {connect} from 'react-redux';
 import {setTheme} from '../../../redux/actions/action';
 import homeStyle from './style/style';
@@ -13,7 +13,7 @@ import {themeColors} from '../../../core/extension/color';
 
 
 const HomeView = props => {
-  const scheme = useTheme();
+  const scheme = useColorScheme();
   const [loading, setLoading] = React.useState(true);
   const [errmsg, setErrmsg] = React.useState(null);
   const [limit, setLimit] = React.useState(50);
@@ -29,6 +29,7 @@ const HomeView = props => {
     setPokeList([]);
     await fetchData().then(res => setLoading(false));
   };
+  
 
   return (
     <BaseView

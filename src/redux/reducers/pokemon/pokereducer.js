@@ -1,11 +1,15 @@
+import { Case } from '../../_caselist/case';
+
 const INITIAL_STATE = {
-  data: [],
+  favoriteList: [],
 };
 
 export const pokereducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'setDetails':
-      return {...state, theme: action.payload};
+    case Case.add_favorite:
+      return { ...state, favoriteList: [...state.favoriteList, action.payload] };
+    case Case.delete_favorite:
+      return { ...state, favoriteList: state.favoriteList.filter(item => item.id !== action.payload.id) }
     default:
       return state;
   }
