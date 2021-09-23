@@ -21,6 +21,7 @@ const App = () => {
         theme={
           scheme === 'dark' ? changeTheme(darkTheme) : changeTheme(lightTheme)
         }>
+          <StatusBar barStyle={scheme ==="dark" ? 'light-content' :'dark-content'} />
         <Navigation />
       </NavigationContainer>
     </Provider>

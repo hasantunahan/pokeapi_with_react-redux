@@ -16,7 +16,7 @@ export const darkTheme = {
   mode: 'dark',
   color: {
     primary: '#ff13dd',
-    background: '#222831',
+    background: '#414141',
     card: '#1D1D1D',
     text: '#ffefff',
     border: '#5ABE45',

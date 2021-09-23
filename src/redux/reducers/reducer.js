@@ -5,6 +5,7 @@ import {Case} from '../_caselist/case';
 const INITIAL_STATE = {
   theme: lightTheme,
   config: config,
+  header : 'Pokedex'
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
@@ -13,6 +14,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
       return {...state, theme: action.payload};
     case Case.config:
       return {...state, config: action.payload};
+    case Case.header:
+      return {...state , header : action.payload}
     default:
       return state;
   }

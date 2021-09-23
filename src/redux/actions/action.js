@@ -6,3 +6,7 @@ export const setTheme = theme => dispatch => {
 export const setConfig = config => dispatch => {
   dispatch({type: 'config', payload: config});
 };
+
+export const setHeader = text => dispatch => {
+  dispatch({type: 'changeHeader', payload: text});
+};

@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { themeColors } from '../../../core/extension/color';
 import HomeView from '../../features/home/home';
+import Test from '../../features/pokemondetail/test';
+
 const Tab = createBottomTabNavigator();
 const HomeNavigation = () => {
     return (
@@ -44,8 +44,8 @@ const HomeNavigation = () => {
                             <Ionicons style={{ justifyContent: 'space-evenly', }} name="heart-outline" color={color} size={size} />
                         ),
                     }}
-                    name="Home3"
-                    component={HomeView} />
+                    name="Favorite"
+                    component={Test} />
                 <Tab.Screen
                     options={{
                         tabBarIcon: ({ color, size }) => (
@@ -53,7 +53,7 @@ const HomeNavigation = () => {
                         ),
                     }}
                     name="Home2"
-                    component={HomeView} />
+                    component={Test} />
                 <Tab.Screen
                     options={{
                         tabBarIcon: ({ color, size }) => (
@@ -61,7 +61,7 @@ const HomeNavigation = () => {
                         ),
                     }}
                     name="Search"
-                    component={HomeView} />
+                    component={Test} />
 
 
             </Tab.Navigator>

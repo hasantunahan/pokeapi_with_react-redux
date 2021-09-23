@@ -1,4 +1,5 @@
 export const Case={
     changeTheme : 'changeTheme',
-    config : 'config'
+    config : 'config',
+    header : 'changeHeader'
 }

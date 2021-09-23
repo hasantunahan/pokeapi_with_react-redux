@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 export const pokereducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'setData':
+    case 'setDetails':
       return {...state, theme: action.payload};
     default:
       return state;

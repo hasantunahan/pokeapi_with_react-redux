@@ -1,20 +1,18 @@
 import React from 'react';
-import {StyleSheet, Platform} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useTheme} from 'react-navigation';
+import {themeColors} from '../../../../core/extension/color';
 const style = props =>
   StyleSheet.create({
-    row: {
+    main: {
+      width: '100%',
       flexDirection: 'row',
-      height: '100%',
-      alignItems: 'center',
-      paddingHorizontal: 5,
       justifyContent: 'space-between',
-    },
-
+    }
   });
-function headerStyle() {
+function pokeDetailsStyle() {
   const {colors} = useTheme();
   const styles = React.useMemo(() => style({colors}), [colors]);
   return styles;
 }
-export default headerStyle;
+export default pokeDetailsStyle;

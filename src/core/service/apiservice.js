@@ -1,6 +1,6 @@
 import store from '../../redux/store/store';
 
-export function API_SERVICES(path, callback, error) {
+export async function API_SERVICES(path, callback, error) {
   try {
     fetch(`${store.getState('config').base.config.BASE_URL}${path}`)
       .then(res => res.json())

@@ -1,16 +1,14 @@
 import React from 'react';
-import { View, Text, StatusBar,SafeAreaView } from 'react-native';
-import { themeColors } from '../../extension/color';
-import { useTheme } from '@react-navigation/native';
+import {View, Text, StatusBar, SafeAreaView} from 'react-native';
+import {themeColors} from '../../extension/color';
 
-const AppStatusBar = () =>{
-    const scheme = useTheme()
-    return (
-        <View style={{height: StatusBar.currentHeight}}>
-      <SafeAreaView style={{ backgroundColor: themeColors().card }} >
-      <StatusBar barStyle={scheme == "dark" ? 'light-content' : 'dark-content'} backgroundColor={themeColors().card} translucent />   
+const AppStatusBar = ({st_color, content}) => {
+  return (
+    <View style={{height: StatusBar.currentHeight}}>
+      <SafeAreaView style={{backgroundColor: themeColors().card}}>
+        <StatusBar barStyle={content} backgroundColor={st_color} translucent />
       </SafeAreaView>
-      </View>
-    );
-}
+    </View>
+  );
+};
 export default AppStatusBar;
