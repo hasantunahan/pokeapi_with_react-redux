@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import TouchableScale from 'react-native-touchable-scale';
-import {withNavigation} from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 import AppImageNetwork from '../../../../../core/app/component/image';
-import {pokeColors} from '../../../../../core/app/constant/poke_color_list';
-import {capitalizeFirstLetter} from '../../../../../core/extension/converter';
+import { pokeColors } from '../../../../../core/app/constant/poke_color_list';
+import { capitalizeFirstLetter } from '../../../../../core/extension/converter';
 import favoritePokeStyle from '../style/style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const FavoritePokeCard = ({item, navigation, onPressRemoveFavorite}) => {
+const FavoritePokeCard = ({ item, navigation, onPressRemoveFavorite }) => {
   const styles = favoritePokeStyle();
   return (
     <TouchableScale
@@ -27,6 +27,15 @@ const FavoritePokeCard = ({item, navigation, onPressRemoveFavorite}) => {
           padding: 8,
           borderRadius: 5,
           backgroundColor: pokeColors[item.types[0].type.name],
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 1,
+          },
+          shadowOpacity: 0.22,
+          shadowRadius: 2.22,
+
+          elevation: 3,
         }}>
         <View style={styles.row_space_between}>
           <View style={styles.row}>
@@ -41,10 +50,10 @@ const FavoritePokeCard = ({item, navigation, onPressRemoveFavorite}) => {
                 marginHorizontal: 3,
                 justifyContent: 'center',
               }}>
-              <Text style={{color: 'white', fontWeight: '700'}}>
+              <Text style={{ color: 'white', fontWeight: '700' }}>
                 {capitalizeFirstLetter(item.name)}
               </Text>
-              <Text style={{color: 'white', fontWeight: '500'}}>
+              <Text style={{ color: 'white', fontWeight: '500' }}>
                 {'Base Experince : '}
                 {item.base_experience}
               </Text>
@@ -52,7 +61,7 @@ const FavoritePokeCard = ({item, navigation, onPressRemoveFavorite}) => {
           </View>
           <TouchableScale onPress={() => onPressRemoveFavorite()}>
             <Ionicons
-              style={{justifyContent: 'space-evenly', marginRight: 5}}
+              style={{ justifyContent: 'space-evenly', marginRight: 5 }}
               name="close"
               color={'white'}
               size={22}

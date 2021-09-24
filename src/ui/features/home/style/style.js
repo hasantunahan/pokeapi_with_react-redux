@@ -12,7 +12,7 @@ const style = props =>
       borderRadius: 5,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: themeColors().background,
       borderWidth: 1.2,
       borderColor: themeColors().border,
     },
@@ -25,8 +25,8 @@ const style = props =>
       paddingRight: 10,
       paddingBottom: 10,
       paddingLeft: 0,
-      backgroundColor: '#fff',
-      color: '#424242',
+      backgroundColor: themeColors().background,
+      color: themeColors().text,
     },
     row:{
       flexDirection:'row'

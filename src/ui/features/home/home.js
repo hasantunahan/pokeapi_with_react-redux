@@ -28,7 +28,7 @@ const HomeView = props => {
   const scheme = useColorScheme();
   const [loading, setLoading] = React.useState(true);
   const [errmsg, setErrmsg] = React.useState(null);
-  const [limit, setLimit] = React.useState(50);
+  const [limit, setLimit] = React.useState(151);
   const [pokeList, setPokeList] = React.useState([]);
   const [refresh, setRefresh] = React.useState(false);
   const [value, onChangeText] = React.useState('');
@@ -124,11 +124,11 @@ const HomeView = props => {
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <Ionicons
                     style={{marginRight: 2}}
-                    color={item.color}
+                    color={themeColors().text}
                     name={item.icon}
                     size={18}
                   />
-                  <Text style={{fontWeight: '500'}}>{item.name}</Text>
+                  <Text style={{fontWeight: '500',color :themeColors().text}}>{item.name}</Text>
                 </View>
               </TouchableScale>
             );

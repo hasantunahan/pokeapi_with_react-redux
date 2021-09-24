@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import TouchableScale from 'react-native-touchable-scale';
-import {withNavigation} from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 import AppImageNetwork from '../../../../core/app/component/image';
-import {pokeColors} from '../../../../core/app/constant/poke_color_list';
-import {capitalizeFirstLetter} from '../../../../core/extension/converter';
+import { pokeColors } from '../../../../core/app/constant/poke_color_list';
+import { capitalizeFirstLetter } from '../../../../core/extension/converter';
 import pokeCardStyle from './style/style';
 
-const PokelistCard = ({item,  navigation}) => {
+const PokelistCard = ({ item, navigation }) => {
   const styles = pokeCardStyle();
   return (
     <View
@@ -17,14 +17,24 @@ const PokelistCard = ({item,  navigation}) => {
         paddingVertical: 10,
         borderRadius: 5,
         backgroundColor: pokeColors[item.types[0].type.name],
+
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 3,
       }}>
-          
+
       <TouchableScale
         onPress={() =>
           navigation.navigate('PokeDetail', {
             data: item,
             color: pokeColors[item.types[0].type.name],
-            catch_percent : Math.floor(Math.random() * 101)
+            catch_percent: Math.floor(Math.random() * 101)
           })
         }
         activeScale={0.9}>

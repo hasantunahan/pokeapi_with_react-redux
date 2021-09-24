@@ -39,8 +39,8 @@ const MyPokemonCard = ({item, releasePokemons, navigation}) => {
           </TouchableScale>
         </View>
         <AppImageNetwork
-          width={82}
-          height={82}
+          width={78}
+          height={78}
           key={item.id}
           url={item.sprites.other['official-artwork'].front_default}
         />

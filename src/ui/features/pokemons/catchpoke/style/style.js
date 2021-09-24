@@ -10,7 +10,7 @@ const style = props =>
       borderRadius: 100,
       marginRight: 5,
       height: 108,
-      width: 112,
+      width: 108,
       alignItems: 'center',
       justifyContent: 'center',
       margin: 12,

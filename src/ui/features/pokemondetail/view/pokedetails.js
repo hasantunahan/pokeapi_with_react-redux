@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { View, Text, Button } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import BaseView from '../../../../core/base/baseview';
 import store from '../../../../redux/store/store';
 import pokeDetailsStyle from '../style/style';
@@ -10,7 +10,7 @@ import TypeCard from '../_component/_types';
 import BaseStatCard from '../_component/_base_stat';
 import AbilitiesCard from '../_component/_abilities';
 import TopViewCard from '../_component/_topview';
-import {connect, useDispatch} from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import {
   addFavorite,
   catchPokemon,
@@ -19,6 +19,7 @@ import {
 } from '../../../../redux/actions/pokemon/pokeaction';
 import Modal from 'react-native-modal';
 import CatchMessageModal from '../../../_partial/_modal/catchMessageModal';
+import { themeColors } from '../../../../core/extension/color';
 
 const PokeDetails = props => {
   const dispatch = useDispatch();
@@ -64,6 +65,7 @@ const PokeDetails = props => {
       view={
         <ScrollView style={styles.scrool_flex}>
           <TopViewCard param={param} color={color} />
+
           <FavoriteAndCatchButton
             isFavorite={isFavorite}
             isMyPokemon={isMypokemon}
@@ -74,6 +76,14 @@ const PokeDetails = props => {
               isMypokemon ? releasePokemons(param) : catchPokemons(param)
             }
           />
+
+          <View style={{ width: '100%', paddingHorizontal: 10, marginTop: 8 }}>
+            <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
+              Base Experince
+            </Text>
+            <Text style={{ color: 'white',marginTop:5 }}>{param.base_experience}</Text>
+          </View>
+
           <TypeCard param={param} />
           <BaseStatCard param={param} />
           <AbilitiesCard param={param} color={color} />
