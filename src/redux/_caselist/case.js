@@ -3,5 +3,7 @@ export const Case={
     config : 'config',
     header : 'changeHeader',
     add_favorite : 'addFavorite',
-    delete_favorite : 'removeFavorite'
+    delete_favorite : 'removeFavorite',
+    catch_pokemon : 'catchPokemon',
+    release_pokemon : 'releasePokemon'
 }

@@ -13,14 +13,14 @@ const TopViewCard = ({param,color}) => {
               backgroundColor: color,
               alignItems: 'center',
               paddingHorizontal: 10,
-              transform: [{ scaleX: 2 }],
-              borderBottomStartRadius: 350,
-              borderBottomEndRadius: 350,
+            //  transform: [{ scaleX: 2 }],
+              borderBottomStartRadius: 50,
+              borderBottomEndRadius: 50,
             }}>
             <View
               style={{
                 flexDirection: 'row',
-                transform: [{ scaleX: 0.5 }],
+               // transform: [{ scaleX: 0.5 }],
                 width: '100%',
                 marginTop: 10,
                 paddingHorizontal: 5,

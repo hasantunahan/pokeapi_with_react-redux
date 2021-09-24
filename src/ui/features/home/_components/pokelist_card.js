@@ -15,7 +15,7 @@ const PokelistCard = ({item,  navigation}) => {
         width: '46%',
         margin: '2%',
         paddingVertical: 10,
-        borderRadius: 12,
+        borderRadius: 5,
         backgroundColor: pokeColors[item.types[0].type.name],
       }}>
           

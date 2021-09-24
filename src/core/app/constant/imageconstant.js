@@ -1,2 +1,5 @@
 export const app_logo = require("../../../assets/image/logo.png")
 export const pokeball = require("../../../assets/image/pokeball.png")
+export const pokeball_open = require("../../../assets/image/pokeball_open.png")
+export const opps = require("../../../assets/image/opps.jpg")
+export const cong = require("../../../assets/image/cong.png")

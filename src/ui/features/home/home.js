@@ -1,16 +1,22 @@
 import React from 'react';
-import { FlatList, RefreshControl, View, useColorScheme } from 'react-native';
+import {FlatList, RefreshControl, View, useColorScheme} from 'react-native';
 import {connect} from 'react-redux';
-import {setTheme} from '../../../redux/actions/action';
+import {setHeader, setTheme} from '../../../redux/actions/action';
 import homeStyle from './style/style';
 import BaseView from '../../../core/base/baseview';
 import LoadingBar from '../../../core/app/component/loading';
 import {API_SERVICES} from '../../../core/service/apiservice';
 import ErrorText from '../../../core/app/component/errorview';
 import PokelistCard from './_components/pokelist_card';
-import {StackActions,NavigationActions, useTheme, withNavigation} from 'react-navigation';
+import {
+  StackActions,
+  NavigationActions,
+  useTheme,
+  withNavigation,
+} from 'react-navigation';
 import {themeColors} from '../../../core/extension/color';
-
+import store from '../../../redux/store/store';
+import { Case } from '../../../redux/_caselist/case';
 
 const HomeView = props => {
   const scheme = useColorScheme();
@@ -21,6 +27,7 @@ const HomeView = props => {
   const [refresh, setRefresh] = React.useState(false);
   const styles = homeStyle();
 
+
   React.useEffect(() => {
     fetchData().then(res => setLoading(false));
   }, [errmsg]);
@@ -30,7 +37,6 @@ const HomeView = props => {
     await fetchData().then(res => setLoading(false));
   };
   
-
   return (
     <BaseView
       st_color={themeColors().card}
@@ -49,20 +55,20 @@ const HomeView = props => {
 
   function renderView() {
     return pokeList.length == limit ? (
-      <View style={{flex:1}}>
+      <View style={{flex: 1}}>
         <FlatList
-        refreshControl={
-          <RefreshControl
-            refreshing={refresh}
-            onRefresh={refreshList}></RefreshControl>
-        }
-        numColumns={2}
-        keyExtractor={item => item.id}
-        data={pokeList.sort((a, b) => a.id > b.id)}
-        renderItem={({item}) => {
-          return <PokelistCard key={item.id} item={item} />;
-        }}
-      />
+          refreshControl={
+            <RefreshControl
+              refreshing={refresh}
+              onRefresh={refreshList}></RefreshControl>
+          }
+          numColumns={2}
+          keyExtractor={item => item.id}
+          data={pokeList.sort((a, b) => a.id > b.id)}
+          renderItem={({item}) => {
+            return <PokelistCard key={item.id} item={item} />;
+          }}
+        />
       </View>
     ) : (
       <LoadingBar />
@@ -99,6 +105,7 @@ const HomeView = props => {
 const mapStateToProps = state => {
   return {
     theme: state.base.theme,
+    header : state.base.header
   };
 };
 
