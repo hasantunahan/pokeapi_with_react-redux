@@ -7,6 +7,7 @@ import AppImageNetwork from '../../../../core/app/component/image';
 import BaseView from '../../../../core/base/baseview';
 import {themeColors} from '../../../../core/extension/color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import pokeball from '../../../../assets/image/pokeball.png';
 
 import {
   catchPokemon,
@@ -14,6 +15,7 @@ import {
 } from '../../../../redux/actions/pokemon/pokeaction';
 import MyPokemonCard from './_component/mypokemoncard';
 import myPokemonStyle from './style/style';
+import ImageExtension from '../../../../core/extension/image';
 
 const MyPokemon = props => {
   const styles = myPokemonStyle();
@@ -52,9 +54,10 @@ const MyPokemon = props => {
           ) : (
             <View
               style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-              <Text numberOfLines={2} style={{color: themeColors().notification}}>
-                {'You dont have any pokemon yet'}
-              </Text>
+              <View style={{marginVertical: 5}}>
+                <ImageExtension height={80} width={80} image={pokeball} />
+              </View>
+              <Text numberOfLines={2}>{'You dont have any pokemon yet'}</Text>
             </View>
           )}
         </View>

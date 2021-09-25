@@ -8,6 +8,8 @@ import {themeColors} from '../../../../core/extension/color';
 import {removeFavorite} from '../../../../redux/actions/pokemon/pokeaction';
 import favoritePokeStyle from './style/style';
 import Favoritepokecard from './_component/favoritepokecard';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 const FavoritePokemon = props => {
   const scheme = useColorScheme();
   const styles = favoritePokeStyle();
@@ -45,9 +47,13 @@ const FavoritePokemon = props => {
           ) : (
             <View
               style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-              <Text
-                numberOfLines={2}
-                style={{color: themeColors().notification}}>
+              <Ionicons
+                style={{justifyContent: 'space-evenly'}}
+                name="heart-outline"
+                color={themeColors().notification}
+                size={80}
+              />
+              <Text numberOfLines={2}>
                 {'You dont have any favorite pokemon yet'}
               </Text>
             </View>

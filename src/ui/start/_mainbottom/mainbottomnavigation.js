@@ -7,6 +7,7 @@ import HomeView from '../../features/home/home';
 import Test from '../../features/pokemondetail/test';
 import MyPokemon from '../../features/pokemons/catchpoke/catchpoke';
 import FavoritePokemon from '../../features/pokemons/favoritepoke/favoritepoke';
+import AboutPokemon from '../../features/about/about';
 
 const Tab = createBottomTabNavigator();
 const HomeNavigation = () => {
@@ -87,7 +88,7 @@ const HomeNavigation = () => {
             ),
           }}
           name="Search"
-          component={Test}
+          component={AboutPokemon}
         />
       </Tab.Navigator>
     </View>

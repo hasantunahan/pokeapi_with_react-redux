@@ -1,7 +1,6 @@
 import { Case } from "../_caselist/case";
 
 export const setTheme = theme => dispatch => {
-  console.log(theme);
   dispatch({type: Case.changeTheme, payload: theme});
 };
 

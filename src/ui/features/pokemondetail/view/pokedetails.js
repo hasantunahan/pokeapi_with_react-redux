@@ -81,7 +81,7 @@ const PokeDetails = props => {
             <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
               Base Experince
             </Text>
-            <Text style={{ color: 'white',marginTop:5 }}>{param.base_experience}</Text>
+            <Text style={{ color: themeColors().text,marginTop:5 }}>{param.base_experience}</Text>
           </View>
 
           <TypeCard param={param} />
