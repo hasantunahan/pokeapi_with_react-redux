@@ -1,6 +1,10 @@
 # Pokemon APP 
 used : https://pokeapi.co/
 
+## Possible Improvements
+> sorting list re-desing
+> about and setting screen 
+
 ## Versions
 
 Instructions on how to use them in your own application are linked below.
