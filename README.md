@@ -1,5 +1,5 @@
-# pokeapi_with_react-redux
-
+# Pokemon APP 
+used : https://pokeapi.co/
 
 ## Versions
 
