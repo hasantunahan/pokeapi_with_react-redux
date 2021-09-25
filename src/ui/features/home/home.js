@@ -37,11 +37,12 @@ const HomeView = props => {
   }, [errmsg]);
 
   React.useEffect(() => {
+    onChangeText('')
     setLoading(true);
     setTimeout(function () {
       setLoading(false);
     }, 1200);
-  }, [props.language]);
+  }, [props.language,sort]);
 
   refreshList = async () => {
     setPokeList([]);
