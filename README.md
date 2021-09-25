@@ -60,7 +60,9 @@ npm run ios
 
 ## Android Phone
 <img align="left" src="screens/and_home.png" width ="200" height="420" >
-<img align="left"  src="screens/and_home_dark.png" width ="200" height="420" >
-
-
-
+<img align="left"  src="screens/and_home_tr.png" width ="200" height="420" >
+<img align="left" src="screens/and_favorite.png" width ="200" height="420" >
+<img align="left"  src="screens/and_filter.png" width ="200" height="420" >
+<img align="left" src="screens/and_catch.png" width ="200" height="420" >
+<img align="left"  src="screens/and_details_1.png" width ="200" height="420" >
+<img align="left"  src="screens/and_details_2.png" width ="200" height="420" >
