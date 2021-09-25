@@ -2,7 +2,7 @@
 used : https://pokeapi.co/
 
 ## Possible Improvements
-> sorting list re-desing
+> sorting list re-desing,
 > about and setting screen 
 
 ## Versions
