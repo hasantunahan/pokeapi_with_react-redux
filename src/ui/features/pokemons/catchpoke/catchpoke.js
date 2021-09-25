@@ -34,7 +34,9 @@ const MyPokemon = props => {
       view={
         <View style={styles.main_back}>
           <View style={styles.row_withMargin}>
-            <Text style={styles.title_screen}>{'Pokemons List'}</Text>
+            <Text style={styles.title_screen}>
+              {props.language.screen_title.my_pokemon}
+            </Text>
           </View>
           {pokemons.length > 0 ? (
             <FlatList
@@ -57,7 +59,9 @@ const MyPokemon = props => {
               <View style={{marginVertical: 5}}>
                 <ImageExtension height={80} width={80} image={pokeball} />
               </View>
-              <Text numberOfLines={2}>{'You dont have any pokemon yet'}</Text>
+              <Text numberOfLines={2}>
+                {props.language.error.empty_pokemon}
+              </Text>
             </View>
           )}
         </View>
@@ -73,6 +77,7 @@ const MyPokemon = props => {
 const mapStateToProps = state => {
   return {
     pokeList: state.pokemon.pokeList,
+    language: state.base.language,
   };
 };
 

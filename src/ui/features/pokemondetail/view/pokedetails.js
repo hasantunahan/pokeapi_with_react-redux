@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import {View, Text, Button} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import BaseView from '../../../../core/base/baseview';
 import store from '../../../../redux/store/store';
 import pokeDetailsStyle from '../style/style';
@@ -10,7 +10,7 @@ import TypeCard from '../_component/_types';
 import BaseStatCard from '../_component/_base_stat';
 import AbilitiesCard from '../_component/_abilities';
 import TopViewCard from '../_component/_topview';
-import { connect, useDispatch } from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 import {
   addFavorite,
   catchPokemon,
@@ -19,7 +19,8 @@ import {
 } from '../../../../redux/actions/pokemon/pokeaction';
 import Modal from 'react-native-modal';
 import CatchMessageModal from '../../../_partial/_modal/catchMessageModal';
-import { themeColors } from '../../../../core/extension/color';
+import {themeColors} from '../../../../core/extension/color';
+import {Case} from '../../../../redux/_caselist/case';
 
 const PokeDetails = props => {
   const dispatch = useDispatch();
@@ -61,12 +62,17 @@ const PokeDetails = props => {
       header_text_color={'white'}
       content={'light-content'}
       isBack={'true'}
-      name={store.getState('changeHeader').base.header}
+      name={store.getState(Case.header).base.header}
       view={
         <ScrollView style={styles.scrool_flex}>
           <TopViewCard param={param} color={color} />
-
           <FavoriteAndCatchButton
+            buttonName={{
+              release: props.language.release_pokemon,
+              catch: props.language.catch_pokemon,
+              remove: props.language.remove_favorite,
+              add: props.language.add_favorite,
+            }}
             isFavorite={isFavorite}
             isMyPokemon={isMypokemon}
             onPressFavorite={() =>
@@ -76,18 +82,17 @@ const PokeDetails = props => {
               isMypokemon ? releasePokemons(param) : catchPokemons(param)
             }
           />
-
-          <View style={{ width: '100%', paddingHorizontal: 10, marginTop: 8 }}>
-            <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
-              Base Experince
-            </Text>
-            <Text style={{ color: themeColors().text,marginTop:5 }}>{param.base_experience}</Text>
-          </View>
-
-          <TypeCard param={param} />
-          <BaseStatCard param={param} />
-          <AbilitiesCard param={param} color={color} />
-
+          {renderBaseExperience()}
+          <TypeCard title={props.language.details.types} param={param} />
+          <BaseStatCard
+            title={props.language.details.base_stat}
+            param={param}
+          />
+          <AbilitiesCard
+            title={props.language.details.abilities}
+            param={param}
+            color={color}
+          />
           <CatchMessageModal
             isCatch={isCatch}
             isModalVisible={isModalVisible}
@@ -97,6 +102,25 @@ const PokeDetails = props => {
       }
     />
   );
+
+  function renderBaseExperience() {
+    return (
+      <View style={{width: '100%', paddingHorizontal: 10, marginTop: 8}}>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: '500',
+            marginTop: 5,
+            color: themeColors().text,
+          }}>
+          {props.language.base_experince}
+        </Text>
+        <Text style={{color: themeColors().text, marginTop: 5}}>
+          {param.base_experience}
+        </Text>
+      </View>
+    );
+  }
 
   function addFavorites(poke) {
     dispatch(addFavorite(poke));
@@ -125,6 +149,7 @@ const mapStateToProps = state => {
   return {
     favoriteList: state.pokemon.favoriteList,
     pokeList: state.pokemon.pokeList,
+    language: state.base.language,
   };
 };
 

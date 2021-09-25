@@ -11,6 +11,7 @@ const FavoriteAndCatchButton = ({
   onPressCatch,
   isFavorite,
   isMyPokemon,
+  buttonName
 }) => {
   return (
     <View
@@ -38,7 +39,7 @@ const FavoriteAndCatchButton = ({
                 fontWeight: '700',
                 color: themeColors().text,
               }}>
-              Release Pokemon
+              {buttonName.release}
             </Text>
           </View>
         ) : (
@@ -55,7 +56,7 @@ const FavoriteAndCatchButton = ({
                 fontWeight: '700',
                 color: themeColors().text,
               }}>
-              Catch Pokemon
+              {buttonName.catch}
             </Text>
           </View>
         )}
@@ -83,7 +84,7 @@ const FavoriteAndCatchButton = ({
                 fontWeight: '700',
                 color: themeColors().notification,
               }}>
-              Remove Favorite
+              {buttonName.remove}
             </Text>
           </View>
         ) : (
@@ -105,7 +106,7 @@ const FavoriteAndCatchButton = ({
                 fontWeight: '700',
                 color: themeColors().text,
               }}>
-              Add Favorite
+              {buttonName.add}
             </Text>
           </View>
         )}

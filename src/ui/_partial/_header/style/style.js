@@ -10,7 +10,10 @@ const style = props =>
       paddingHorizontal: 5,
       justifyContent: 'space-between',
     },
-
+    row_center :{
+      flexDirection:'row',
+      alignItems:'center'
+    }
   });
 function headerStyle() {
   const {colors} = useTheme();

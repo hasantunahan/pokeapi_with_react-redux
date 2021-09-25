@@ -5,5 +5,6 @@ export const Case={
     add_favorite : 'addFavorite',
     delete_favorite : 'removeFavorite',
     catch_pokemon : 'catchPokemon',
-    release_pokemon : 'releasePokemon'
+    release_pokemon : 'releasePokemon',
+    change_language : 'changeLanguage'
 }

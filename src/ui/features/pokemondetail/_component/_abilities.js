@@ -3,12 +3,12 @@ import {View,Text} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { themeColors } from '../../../../core/extension/color';
 
-const AbilitiesCard = ({param,color}) =>{
+const AbilitiesCard = ({title,param,color}) =>{
     return(
 
         <View style={{ width: '100%', paddingHorizontal: 10, marginTop: 8 }}>
             <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
-              Abilities
+              {title}
             </Text>
             <ScrollView horizontal>
               <View style={{ flexDirection: 'row' }}>

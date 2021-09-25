@@ -27,7 +27,9 @@ const FavoritePokemon = props => {
       view={
         <View style={styles.main}>
           <View style={styles.row_withMargin}>
-            <Text style={styles.title_screen}>{'Favorite List'}</Text>
+            <Text style={styles.title_screen}>
+              {props.language.screen_title.favorite_pokemon}
+            </Text>
           </View>
           {pokemons.length > 0 ? (
             <FlatList
@@ -54,7 +56,7 @@ const FavoritePokemon = props => {
                 size={80}
               />
               <Text numberOfLines={2}>
-                {'You dont have any favorite pokemon yet'}
+                {props.language.error.empty_favorite}
               </Text>
             </View>
           )}
@@ -71,6 +73,7 @@ const FavoritePokemon = props => {
 const mapStateToProps = state => {
   return {
     favoriteList: state.pokemon.favoriteList,
+    language: state.base.language,
   };
 };
 

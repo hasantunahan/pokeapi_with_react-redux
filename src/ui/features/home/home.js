@@ -7,7 +7,7 @@ import {
   Text,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {setHeader, setTheme} from '../../../redux/actions/action';
+import {setTheme} from '../../../redux/actions/action';
 import homeStyle from './style/style';
 import BaseView from '../../../core/base/baseview';
 import LoadingBar from '../../../core/app/component/loading';
@@ -16,8 +16,6 @@ import ErrorText from '../../../core/app/component/errorview';
 import PokelistCard from './_components/pokelist_card';
 import {withNavigation} from 'react-navigation';
 import {themeColors} from '../../../core/extension/color';
-import store from '../../../redux/store/store';
-import {Case} from '../../../redux/_caselist/case';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {SortingData} from '../../../core/app/constant/sorting_data';
@@ -33,11 +31,17 @@ const HomeView = props => {
   const [refresh, setRefresh] = React.useState(false);
   const [value, onChangeText] = React.useState('');
   const [sort, setSort] = React.useState(0);
-  const [sorting, setSorting] = React.useState(SortingData);
 
   React.useEffect(() => {
     fetchData().then(res => setLoading(false));
   }, [errmsg]);
+
+  React.useEffect(() => {
+    setLoading(true);
+    setTimeout(function () {
+      setLoading(false);
+    }, 1200);
+  }, [props.language]);
 
   refreshList = async () => {
     setPokeList([]);
@@ -95,7 +99,7 @@ const HomeView = props => {
         />
         <TextInput
           style={styles.input}
-          placeholder="enter pokemon name"
+          placeholder={props.language.text_input.pokemon_name}
           onChangeText={searchString => {
             onChangeText(searchString.toLowerCase());
           }}
@@ -109,7 +113,7 @@ const HomeView = props => {
     return (
       <View style={{paddingHorizontal: 10, marginVertical: 5}}>
         <ScrollView showsHorizontalScrollIndicator={false} horizontal>
-          {sorting.map(item => {
+          {props.language.sorting_list.map(item => {
             return (
               <TouchableScale
                 style={{
@@ -128,7 +132,9 @@ const HomeView = props => {
                     name={item.icon}
                     size={18}
                   />
-                  <Text style={{fontWeight: '500',color :themeColors().text}}>{item.name}</Text>
+                  <Text style={{fontWeight: '500', color: themeColors().text}}>
+                    {item.name}
+                  </Text>
                 </View>
               </TouchableScale>
             );
@@ -143,19 +149,19 @@ const HomeView = props => {
       if (id == 1) {
         return pokeList
           .filter(item => item.name.toLowerCase().includes(value))
-          .sort((a, b) => b.base_experience > a.base_experience);
+          .sort((a, b) => a.base_experience > b.base_experience);
       } else if (id == 2) {
         return pokeList
           .filter(item => item.name.toLowerCase().includes(value))
-          .sort((a, b) => a.base_experience > b.base_experience);
+          .sort((a, b) => b.base_experience > a.base_experience);
       } else if (id == 3) {
         return pokeList
           .filter(item => item.name.toLowerCase().includes(value))
-          .sort((a, b) => b.id > a.id);
+          .sort((a, b) => a.id > b.id);
       } else if (id == 4) {
         return pokeList
           .filter(item => item.name.toLowerCase().includes(value))
-          .sort((a, b) => a.id > b.id);
+          .sort((a, b) => b.id > a.id);
       } else {
         return pokeList
           .filter(item => item.name.toLowerCase().includes(value))
@@ -195,6 +201,7 @@ const mapStateToProps = state => {
   return {
     theme: state.base.theme,
     header: state.base.header,
+    language: state.base.language,
   };
 };
 

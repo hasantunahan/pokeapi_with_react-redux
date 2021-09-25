@@ -3,11 +3,11 @@ import { View, Text } from 'react-native';
 import { pokeColors } from '../../../../core/app/constant/poke_color_list';
 import { themeColors } from '../../../../core/extension/color';
 
-const TypeCard = ({param}) => {
+const TypeCard = ({title,param}) => {
     return (
         <View style={{ width: '100%', paddingHorizontal: 10, marginTop: 8 }}>
             <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
-                Types
+                {title}
             </Text>
             <View
                 style={{

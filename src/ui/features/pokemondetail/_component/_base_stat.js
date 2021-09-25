@@ -3,12 +3,12 @@ import {View,Text} from 'react-native';
 import { themeColors } from '../../../../core/extension/color';
 import { capitalizeFirstLetter } from '../../../../core/extension/converter';
 
-const BaseStatCard = ({param}) =>{
+const BaseStatCard = ({title,param}) =>{
     return (
 
         <View style={{ width: '100%', paddingHorizontal: 10, marginTop: 8 }}>
             <Text style={{ fontSize: 20, fontWeight: '500', marginTop: 5, color: themeColors().text }}>
-              Base Stats
+              {title}
             </Text>
             {param.stats.map((stat, index) => {
               let percent = parseInt(stat.base_stat) + '%';

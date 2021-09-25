@@ -1,4 +1,4 @@
-import { Case } from "../_caselist/case";
+import {Case} from '../_caselist/case';
 
 export const setTheme = theme => dispatch => {
   dispatch({type: Case.changeTheme, payload: theme});
@@ -10,4 +10,8 @@ export const setConfig = config => dispatch => {
 
 export const setHeader = text => dispatch => {
   dispatch({type: Case.header, payload: text});
+};
+
+export const changeLanguage = label => dispatch => {
+  dispatch({type: Case.change_language, payload: label});
 };
