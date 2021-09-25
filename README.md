@@ -1,10 +1,6 @@
 # Pokemon APP 
 used : https://pokeapi.co/
 
-## Possible Improvements
-> sorting list re-desing,
-> about and setting screen 
-
 ## Versions
 
 Instructions on how to use them in your own application are linked below.
@@ -61,6 +57,10 @@ and then :
 ```sh
 npm run ios
 ```
+
+## Possible Improvements
+> sorting list re-desing,
+> about and setting screen 
 
 ## Android Phone
 <img align="left" src="screens/and_home.png" width ="200" height="420" >
