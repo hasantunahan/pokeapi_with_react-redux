@@ -55,7 +55,7 @@ const FavoritePokemon = props => {
                 color={themeColors().notification}
                 size={80}
               />
-              <Text numberOfLines={2}>
+              <Text style={{color : themeColors().text}}  numberOfLines={2}>
                 {props.language.error.empty_favorite}
               </Text>
             </View>

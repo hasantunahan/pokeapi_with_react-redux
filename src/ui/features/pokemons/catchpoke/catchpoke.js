@@ -59,7 +59,7 @@ const MyPokemon = props => {
               <View style={{marginVertical: 5}}>
                 <ImageExtension height={80} width={80} image={pokeball} />
               </View>
-              <Text numberOfLines={2}>
+              <Text style={{color : themeColors().text}} numberOfLines={2}>
                 {props.language.error.empty_pokemon}
               </Text>
             </View>
