@@ -65,4 +65,12 @@ npm run ios
 <img align="left"  src="screens/and_filter.png" width ="200" height="420" >
 <img align="left" src="screens/and_catch.png" width ="200" height="420" >
 <img align="left"  src="screens/and_details_1.png" width ="200" height="420" >
-<img align="left"  src="screens/and_details_2.png" width ="200" height="420" >
+<img src="screens/and_details_2.png" width ="200" height="420" >
+
+## IOS Phone
+<img align="left" src="screens/ios_home.png" width ="200" height="420" >
+<img align="left"  src="screens/ios_home_tr.png" width ="200" height="420" >
+<img align="left" src="screens/ios_favorite.png" width ="200" height="420" >
+<img align="left" src="screens/ios_catch.png" width ="200" height="420" >
+<img align="left"  src="screens/ios_details_1.png" width ="200" height="420" >
+<img src="screens/ios_details_2.png" width ="200" height="420" >
